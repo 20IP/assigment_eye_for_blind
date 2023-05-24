@@ -40,7 +40,7 @@ def show_img_desc(df, num=5):
 def standardize(text):
     text = tf.strings.lower(text)
     text = tf.strings.regex_replace(text, f'[{re.escape(string.punctuation)}]', '')
-    text = tf.strings.join(['<START>', text, '<END>'], separator=' ')
+    text = tf.strings.join(['<start>', text, '<end>'], separator=' ')
     return text.numpy().decode('utf-8')
 
 
